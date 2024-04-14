@@ -1,6 +1,7 @@
 package com.levmin.controller;
 
 import com.levmin.entity.TbStudent;
+import com.levmin.request.TbStudentRequest;
 import com.levmin.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,7 @@ public class DemoController {
     public DemoService demoService;
 
     @PostMapping("/getList")
-    public List<TbStudent> getList(@RequestBody TbStudent request){
+    public List<TbStudent> getList(@RequestBody TbStudentRequest request){
         return demoService.getTbStudentByNameAndAddr(request);
     }
 }
